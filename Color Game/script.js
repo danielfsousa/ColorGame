@@ -15,28 +15,27 @@ var btnDificil = dificuldades[1];
 //INICIAR
 iniciar();
 
-//EVENTOS
-btnFacil.addEventListener("click", function() {
-    btnFacil.classList.add("ativo");
-    btnDificil.classList.remove("ativo");
-    numQuadrados = 3;
-    resetar();
-});
-
-btnDificil.addEventListener("click", function() {
-    btnFacil.classList.remove("ativo");
-    btnDificil.classList.add("ativo");
-    numQuadrados = 9;
-    resetar();
-});
-
-btnResetar.addEventListener("click", function() {
-    resetar();
-});
-
 //FUNÇÕES
 function iniciar() {
     rgbCor.textContent = corEscolhida;
+
+    btnFacil.addEventListener("click", function() {
+        btnFacil.classList.add("ativo");
+        btnDificil.classList.remove("ativo");
+        numQuadrados = 3;
+        resetar();
+    });
+
+    btnDificil.addEventListener("click", function() {
+        btnFacil.classList.remove("ativo");
+        btnDificil.classList.add("ativo");
+        numQuadrados = 9;
+        resetar();
+    });
+
+    btnResetar.addEventListener("click", function() {
+        resetar();
+    });
 
     for(var i = 0; i < quadrados.length; i++) {
         quadrados[i].style.background = cores[i];
